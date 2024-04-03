@@ -33,6 +33,7 @@ function Quiz() {
 
   return (
     <div className='quiz'>
+      <h1 className="text-6xl text-red">Quiz</h1>
       {showScore ? (
         <div className='score-section'>
           You scored {score} out of {quizData.length}
