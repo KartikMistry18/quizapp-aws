@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import quizData from './quizData';
+import Navbar from './navbar';
 
 function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -33,22 +34,24 @@ function Quiz() {
 
   return (
     <div className='quiz'>
-      <h1 className="text-6xl text-red">Quiz</h1>
+      <Navbar/>
+      <h1 className="text-6xl text-red text-center mb-4">Quiz App</h1>
       {showScore ? (
-        <div className='score-section'>
+        <div className='text-center'>
           You scored {score} out of {quizData.length}
         </div>
       ) : (
         <>
-          <div className='question-section'>
-            <div className='question-count'>
-              <span>Question {currentQuestion + 1}</span>/{quizData.length}
+          <div className='w-full'>
+            <div className='flex place-items-center mb-4'>
+              <span className='w-full text-center text-2xl'>Question {currentQuestion + 1}/{quizData.length}</span>
             </div>
-            <div className='question-text'>{quizData[currentQuestion].question}</div>
+            <div className='question-text text-center'>{quizData[currentQuestion].question}</div>
           </div>
-          <div className='answer-section'>
+          <div className='text-center m-2'>
             {quizData[currentQuestion].options.map((option) => (
               <button 
+              className='m-4 outline p-2'
                 onClick={() => handleAnswerOptionClick(option)} 
                 key={option}
                 style={{ backgroundColor: selectedAnswer === option ? (isCorrect ? 'lightgreen' : 'pink') : '' }}
@@ -58,7 +61,7 @@ function Quiz() {
             ))}
           </div>
           {selectedAnswer && (
-            <div style={{ marginTop: '10px' }}>
+            <div className='text-center' style={{ marginTop: '10px' }}>
               {isCorrect ? 'Correct! 🎉' : 'Sorry, that’s not right. 😢'}
             </div>
           )}
