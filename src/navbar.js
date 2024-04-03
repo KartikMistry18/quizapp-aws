@@ -14,7 +14,7 @@ const Navbar = () => {
         </div>
         <div className="text-white">
           <Link href="/index" className="text-gray-300 hover:text-white mr-4">Home</Link>
-          <Link href="/diabetes" className="text-gray-300 hover:text-white mr-4">Diabetes</Link>
+          <Link href="/quiz" className="text-gray-300 hover:text-white mr-4">quiz</Link>
          
             <Link href="https://diabetesretinopathy.streamlit.app/" className="text-gray-300 hover:text-white mr-4">Diabetes Retinopathy</Link>
           

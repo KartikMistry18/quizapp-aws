@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter, Route, NavLink, Link, Routes, Router } from "react-router-dom";
+import React from 'react';
+import { Routes, Route } from 'react-router';
+import Quiz from "./Quiz"
 
-function RouterComponent(){
-    return(
-        <Routes>
-        <Route path="/" element={<Home />} exact={true} />
-        </Routes>
-    )
-}
 
-export default RouterComponent;
+const createRoutes = () => (
+    <Routes>
+      <Route path="/quiz" element={<Quiz/>} exact={true} />
+    </Routes>
+);
+
+export default createRoutes;

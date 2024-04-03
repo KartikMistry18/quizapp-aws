@@ -20,6 +20,7 @@ import {
 import { uploadData, getUrl, remove } from 'aws-amplify/storage';
 import Quiz from './Quiz';
 import { generateClient } from 'aws-amplify/api';
+import Navbar from "./navbar";
 const client = generateClient();
 
 const App = ({ signOut }) => {
@@ -76,6 +77,7 @@ const App = ({ signOut }) => {
     
     <View className="App">
       <Authenticator>
+        <Navbar/>
       <Heading level={1}>My Notes App</Heading>
       <View as="form" margin="3rem 0" onSubmit={createTodo}>
         <Flex direction="row" justifyContent="center">
